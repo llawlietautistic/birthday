@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday Dia</title>
+<style>
+  body {
+    font-family: "Courier New", monospace;
+    background: #111;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .typewriter {
+    font-size: 28px;
+    white-space: pre-line;
+    border-right: 2px solid #fff;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  .gift-link {
+    display: none;
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  .gift-link a {
+    color: #00aaff;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div id="text" class="typewriter"></div>
+
+<div id="gift" class="gift-link">
+  <a href="unnamed.jpg" target="_blank">🎁Tera Gift</a>
+</div>
+
+<script>
+const message = 
+`HAPPYYYY BIRTHDAY DIAA!!!
+
+STAY BLESSED
+
+I HOPE TU SRK SE JALDI MIL PAYE
+LE TERA GIFTT`;
+
+let i = 0;
+function typeWriter() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 160);
+  } else {
+    document.querySelector(".typewriter").style.borderRight = "none";
+
+    // Show the clickable link
+    document.getElementById("gift").style.display = "block";
+  }
+}
+typeWriter();
+</script>
+
+</body>
+</html>
